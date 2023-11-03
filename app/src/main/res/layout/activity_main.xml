@@ -93,7 +93,7 @@
                 android:text="Player2"
                 android:textColor="@color/lightGreen"
                 android:textSize="20dp"
-                android:textStyle="bold" />L
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="40dp"

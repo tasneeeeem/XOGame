@@ -1,7 +1,6 @@
 package com.example.xogame;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -11,33 +10,30 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ResultDialog extends Dialog {
-    private final String messages;
+
+    private final String message;
     private final MainActivity mainActivity;
 
-    public ResultDialog(@NonNull Context context ,String messages ,MainActivity mainActivity) {
+    public ResultDialog(@NonNull Context context, String message, MainActivity mainActivity) {
         super(context);
-        this.messages=messages;
-        this.mainActivity=mainActivity;
+        this.message = message;
+        this.mainActivity = mainActivity;
     }
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_dialog);
 
-        TextView messagesText =findViewById(R.id.messageText);
-        Button startAgainBtn=findViewById(R.id.startAgainButton);
+        TextView messageText = findViewById(R.id.messageText);
+        Button startAgainButton = findViewById(R.id.startAgainButton);
 
-        messagesText.setText(messages);
+        messageText.setText(message);
 
-        startAgainBtn.setOnClickListener(new View.OnClickListener() {
+        startAgainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainActivity.restartMach();
+                mainActivity.restartMatch();
                 dismiss();
             }
         });

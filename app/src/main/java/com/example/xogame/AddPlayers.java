@@ -16,29 +16,27 @@ public class AddPlayers extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_players);
 
-        EditText playerOne=findViewById(R.id.playerOne);
-        EditText playerTwo=findViewById(R.id.playerTwo);
-        Button startGameButton=findViewById(R.id.startGameBtn);
+        EditText playerOne = findViewById(R.id.playerOne);
+        EditText playerTwo = findViewById(R.id.playerTwo);
+        Button startGameButton = findViewById(R.id.startGameBtn);
 
         startGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            String getPlayerOneName=playerOne.getText().toString();
-            String getPlayerTwoName=playerTwo.getText().toString();
 
-            if (getPlayerOneName.isEmpty()|| getPlayerTwoName.isEmpty()){
-                Toast.makeText(AddPlayers.this, "enter your name plz", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                Intent intent=new Intent(AddPlayers.this, MainActivity.class);
-                intent.putExtra("playerOne",getPlayerOneName);
-                intent.putExtra("playerTwo",getPlayerTwoName);
-                startActivity(intent);
-            }
+                String getPlayerOneName = playerOne.getText().toString();
+                String getPlayerTwoName = playerTwo.getText().toString();
+
+                if (getPlayerOneName.isEmpty() || getPlayerTwoName.isEmpty()) {
+                    Toast.makeText(AddPlayers.this, "Please enter player name", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(AddPlayers.this, MainActivity.class);
+                    intent.putExtra("playerOne", getPlayerOneName);
+                    intent.putExtra("playerTwo", getPlayerTwoName);
+                    startActivity(intent);
+                }
             }
         });
-
-
 
     }
 }
